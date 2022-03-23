@@ -1,0 +1,15 @@
+version : '3'
+
+services: 
+
+  node_upload_service:
+    build: .
+    container_name: upload_service
+    restart: always
+    volumes:
+      - ./src:/home/node/app/src
+    ports: 
+      - 3000:3000
+    user:
+      node:node
+    stdin_open: true
