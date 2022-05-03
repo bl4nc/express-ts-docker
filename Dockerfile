@@ -8,14 +8,10 @@ WORKDIR /home/node/app
 
 COPY package*.json ./
 
-RUN npm install nodemon -g
-
 RUN npm install
 
-COPY . .
-
-COPY --chown=node:node . .
+COPY ./build .
 
 EXPOSE 3000
 
-CMD ["nodemon","-L","./src/server.ts"]
+CMD ["node","server.js"]

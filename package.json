@@ -7,7 +7,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "ts-node-dev src/server.ts -r dotenv/config",
         "build": "tsc",
-        "nodemon": "nodemon "
+        "nodemon": "nodemon ",
+        "prod": "node run server.js"
     },
     "nodemonConfig": {
         "watch": [

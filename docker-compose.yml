@@ -2,9 +2,9 @@ version : '3'
 
 services: 
 
-  node_upload_service:
+  ts_express_docker_templete:
     build: .
-    container_name: upload_service
+    container_name: ts_express_docker_templete
     restart: always
     volumes:
       - ./src:/home/node/app/src
@@ -13,3 +13,11 @@ services:
     user:
       node:node
     stdin_open: true
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+        reservations:
+          cpus: '0.75'
+          memory: 384M
