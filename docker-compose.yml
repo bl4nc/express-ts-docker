@@ -2,22 +2,16 @@ version : '3'
 
 services: 
 
-  ts_express_docker_templete:
-    build: .
+  ts_express:
+    build: api
     container_name: ts_express_docker_templete
     restart: always
     volumes:
-      - ./src:/home/node/app/src
+      - ./api/src:/app/src
     ports: 
       - 3000:3000
     user:
       node:node
     stdin_open: true
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: 512M
-        reservations:
-          cpus: '0.75'
-          memory: 384M
+    environment: 
+      - ENV=DEV
